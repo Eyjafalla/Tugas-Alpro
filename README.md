@@ -1,2 +1,4 @@
 # Tugas-Alpro
-hanya untuk tugas
+Kelompok:
+Akbar Dimas Adi Ansya
+Fredi 
