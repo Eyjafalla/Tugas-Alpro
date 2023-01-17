@@ -1,5 +1,5 @@
 # Tugas-Alpro
 Kelompok:
-================================================
-Akbar Dimas Adi Ansya dan Frediyanto supratama |
-================================================
+<>================================================<>
+ |Akbar Dimas Adi Ansya dan Fredianto supratama  |
+<>================================================<>
