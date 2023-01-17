@@ -41,7 +41,7 @@ def pilihmenu(p):
     elif p==8:
         hapuspeminjam()
     elif p==11:
-        sorting("daftarbuku.txt")
+        sorting()
     elif p==9:
         print("\n[Anda telah keluar dari program]")
     else:
@@ -247,17 +247,9 @@ def hapuspeminjam():
         input()
         menu()
 
-def sorting(filename):
-  infile = open(filename)
-  words = []
-  for line in infile:
-    temp = line.split()
-    for i in temp:
-      words.append(i)
-  infile.close()
-  words.sort()
-  outfile = open("daftarbuku.txt", "w")
-  for i in words:
-    outfile.writelines(i)
-    outfile.writelines(" ")
-  outfile.close()
+def sorting():
+    inputFile = open("daftarbuku.txt", 'r')
+    lineList = inputFile.readlines()
+    lineList.sort()
+    for line in  lineList:
+        print(line)

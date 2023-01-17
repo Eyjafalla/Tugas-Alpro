@@ -1,1 +1,3 @@
-Bulan,Tereliye,2000 Bumi,Tereliye,2000 
+Bulan,Tereliye,2000
+Bumi,Tereliye,2000
+Aezakmi,Polisi,2004
