@@ -271,3 +271,4 @@ def sorting():
     bukadata.close()
     input()
     menu()
+    
