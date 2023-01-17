@@ -15,7 +15,7 @@ def menu():
             |   6   | Lihat Daftar Peminjam Buku |
             |   7   | Tambah Peminjam Buku       |
             |   8   | Hapus Data Peminjaman Buku |
-            |   11   | sorting test               |
+            |   11  | Urutkan dari A-Z           |
             |   9   | Keluar                     |
             ======================================
             """)
@@ -248,8 +248,26 @@ def hapuspeminjam():
         menu()
 
 def sorting():
-    inputFile = open("daftarbuku.txt", 'r')
-    lineList = inputFile.readlines()
-    lineList.sort()
-    for line in  lineList:
-        print(line)
+    import os
+    os.system("CLS")
+    print("\nHasil dari Sorting dari A-Z : ")
+    bukadata = open("daftarbuku.txt","r")
+    isi = bukadata.readlines()
+    isi.sort()
+    if len(isi) == 0:
+        print("\n[Data tidak tersedia]")
+    else :
+        print("\n================================")
+        print("NO | NAMA | JUDUL BUKU | Tahun |")
+        print("================================")
+        i=1
+        for data_buku in isi:
+            pecah = data_buku.split(",")
+            print("\n" + str(i) + ".",end=" ")
+            print("| "+pecah[0]+" | "+ pecah[1]+" | "+pecah[2])
+            i += 1
+        print("================================")
+    print("\nTekan [ENTER] untuk kembali ke menu.")
+    bukadata.close()
+    input()
+    menu()
