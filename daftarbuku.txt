@@ -1,3 +1,6 @@
 Bulan,Tereliye,2000
 Bumi,Tereliye,2000
 Aezakmi,Polisi,2004
+Pulang,Tereliye,2015
+Rindu,Tereliye,2014
+Matahari,Tereliye,2022
