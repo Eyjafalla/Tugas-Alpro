@@ -1,4 +1,5 @@
 # Tugas-Alpro
 Kelompok:
 
-Akbar Dimas Adi Ansya dan Fredianto supratama  
+1. Akbar Dimas Adi Ansya 
+2. Fredianto supratama  
