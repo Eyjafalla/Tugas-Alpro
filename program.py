@@ -87,14 +87,23 @@ def caridata():
     isi = bukadata.readlines()
     isi.sort()
 
-    print("\n======================================")
-    print(" NAMA | JUDUL BUKU | Tahun Terbit    |")
-    print("======================================")
+    no = "No"
+    Judul = "Judul"
+    Pengarang = "Pengarang"
+    terbit = "Tahun Terbit"
+    print("="*61)
+    print(f"{no:2} | {Judul:10} | {Pengarang:15} | {terbit:23} |")
+    print("="*61)
     i=1
-    for data_buku in isi:
+    for index,data_buku in enumerate (isi):
             pecah = data_buku.split(",")
             if pecah[0] == cari:
-                print ("\n"+pecah[0]+" | "+ pecah [1]+" | "+ pecah[2], end=" ")
+                A = pecah[0]
+                B = pecah[1]
+                C = pecah[2].replace("\n","")
+                print(f"{index+1:2} | {A:10} | {B:15} | {C:20}\n", end="")   
+            
+                print("="*61)
                 i += 1
     print("\n======================================")
 
