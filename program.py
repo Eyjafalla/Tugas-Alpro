@@ -50,23 +50,29 @@ def pilihmenu(p):
 def daftarbuku():
     import os
     os.system("CLS")
-    print("\nDaftar buku yang tersedia : ")
+    print("\nHasil dari Sorting dari A-Z : ")
     bukadata = open("daftarbuku.txt","r")
     isi = bukadata.readlines()
-    isi.sort()
+    #isi.sort()
     if len(isi) == 0:
         print("\n[Data tidak tersedia]")
     else :
-        print("\n================================")
-        print("NO | NAMA | JUDUL BUKU | Tahun |")
-        print("================================")
-        i=1
-        for data_buku in isi:
-            pecah = data_buku.split(",")
-            print("\n" + str(i) + ".",end=" ")
-            print("| "+pecah[0]+" | "+ pecah[1]+" | "+pecah[2])
-            i += 1
-        print("================================")
+        no = "No"
+        Judul = "Judul"
+        Pengarang = "Pengarang"
+        terbit = "Tahun Terbit"
+        print("="*61)
+        print(f"{no:2} | {Judul:10} | {Pengarang:15} | {terbit:23} |")
+        print("="*61)
+        
+        for index,content in enumerate(isi):
+            pecah = content.split(",")
+            A = pecah[0]
+            B = pecah[1]
+            C = pecah[2].replace("\n","")
+            print(f"{index+1:2} | {A:10} | {B:15} | {C:20}\n", end="")  
+            
+        print("="*61)
     print("\nTekan [ENTER] untuk kembali ke menu.")
     bukadata.close()
     input()
@@ -269,7 +275,7 @@ def sorting():
             pecah = content.split(",")
             A = pecah[0]
             B = pecah[1]
-            C = pecah[2]
+            C = pecah[2].replace("\n","")
             print(f"{index+1:2} | {A:10} | {B:15} | {C:20}\n", end="")  
             
         print("="*61)
