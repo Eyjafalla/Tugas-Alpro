@@ -15,8 +15,8 @@ def menu():
             |   6   | Lihat Daftar Peminjam Buku |
             |   7   | Tambah Peminjam Buku       |
             |   8   | Hapus Data Peminjaman Buku |
-            |   11  | Urutkan dari A-Z           |
-            |   9   | Keluar                     |
+            |   9   | Urutkan dari A-z           |
+            |   10  | Keluar                     |
             ======================================
             """)
  
@@ -40,9 +40,9 @@ def pilihmenu(p):
         tambahpeminjam()
     elif p==8:
         hapuspeminjam()
-    elif p==11:
-        sorting()
     elif p==9:
+        sorting()
+    elif p==10:
         print("\n[Anda telah keluar dari program]")
     else:
         print("\n[Masukkan Input Yang telah disediakan!]")
@@ -50,7 +50,7 @@ def pilihmenu(p):
 def daftarbuku():
     import os
     os.system("CLS")
-    print("\nHasil dari Sorting dari A-Z : ")
+    print("\nDaftar Buku yang Tersedia : ")
     bukadata = open("daftarbuku.txt","r")
     isi = bukadata.readlines()
     #isi.sort()
@@ -61,18 +61,18 @@ def daftarbuku():
         Judul = "Judul"
         Pengarang = "Pengarang"
         terbit = "Tahun Terbit"
-        print("="*61)
-        print(f"{no:2} | {Judul:10} | {Pengarang:15} | {terbit:23} |")
-        print("="*61)
+        print("="*80)
+        print(f"{no:2} | {Judul:30} | {Pengarang:25} | {terbit:12} |")
+        print("="*80)
         
         for index,content in enumerate(isi):
             pecah = content.split(",")
             A = pecah[0]
             B = pecah[1]
             C = pecah[2].replace("\n","")
-            print(f"{index+1:2} | {A:10} | {B:15} | {C:20}\n", end="")  
+            print(f"{index+1:2} | {A:30} | {B:25} | {C:12} |\n", end="")  
             
-        print("="*61)
+        print("="*80)
     print("\nTekan [ENTER] untuk kembali ke menu.")
     bukadata.close()
     input()
@@ -91,9 +91,9 @@ def caridata():
     Judul = "Judul"
     Pengarang = "Pengarang"
     terbit = "Tahun Terbit"
-    print("="*61)
-    print(f"{no:2} | {Judul:10} | {Pengarang:15} | {terbit:23} |")
-    print("="*61)
+    print("="*80)
+    print(f"{no:2} | {Judul:30} | {Pengarang:25} | {terbit:12} |")
+    print("="*80)
     i=1
     for index,data_buku in enumerate (isi):
             pecah = data_buku.split(",")
@@ -101,17 +101,16 @@ def caridata():
                 A = pecah[0]
                 B = pecah[1]
                 C = pecah[2].replace("\n","")
-                print(f"{index+1:2} | {A:10} | {B:15} | {C:20}\n", end="")   
-            
-                print("="*61)
-                i += 1
-    print("\n======================================")
-
-    print("\n\nTekan [ENTER] untuk kembali ke menu.")
-    bukadata.close()
-    input()
-    menu()
-
+                print(f"{index+1:2} | {A:30} | {B:25} | {C:12} |\n", end="")   
+                print("="*80)
+                print("\nIngin Mencari Buku Lagi? (Y/N)", end=" ")
+                crdt = input(" : ")
+                if crdt == "y" or crdt == "Y":
+                    caridata()
+                else :
+                    print("\nTekan [ENTER] Untuk kembali ke menu")
+                    input()
+                    menu()
 def tambahdata():
     import os
     os.system("CLS")
@@ -203,16 +202,23 @@ def daftarpeminjam():
     if len(isi) == 0:
         print("\n[Data Tidak Tersedia]")
     else :
-        print("\n==========================================")
-        print("NO | NAMA | JUDUL BUKU | TGL.PEMINAJAMAN |")
-        print("==========================================")
-        i=1
-        for data_buku in isi:
-            pecah = data_buku.split(",")
-            print("\n" + str(i) + ".",end=" ")
-            print("| "+pecah[0]+" | "+ pecah[1]+" | "+ pecah[2])
-            i += 1
-        print("\nTekan [ENTER] untuk kembali ke menu")
+        no = "No"
+        Nama = "NAMA"
+        Judul = "JUDUL"
+        tglpj = "TGL.PINJAM"
+        print("="*80)
+        print(f"{no:2} | {Nama:30} | {Judul:25} | {tglpj:12} |")
+        print("="*80)
+        
+        for index,content in enumerate(isi):
+            pecah = content.split(",")
+            A = pecah[0]
+            B = pecah[1]
+            C = pecah[2].replace("\n","")
+            print(f"{index+1:2} | {A:30} | {B:25} | {C:12} |\n", end="")  
+            
+        print("="*80)
+        print("\nTekan [ENTER] untuk kembali ke menu.")
         bukadata.close()
         input()
         menu()
@@ -265,7 +271,7 @@ def hapuspeminjam():
 def sorting():
     import os
     os.system("CLS")
-    print("\nHasil dari Sorting dari A-Z : ")
+    print("\nHasil dari Pengurutan dari A-Z : ")
     bukadata = open("daftarbuku.txt","r")
     isi = bukadata.readlines()
     isi.sort()
@@ -276,18 +282,18 @@ def sorting():
         Judul = "Judul"
         Pengarang = "Pengarang"
         terbit = "Tahun Terbit"
-        print("="*61)
-        print(f"{no:2} | {Judul:10} | {Pengarang:15} | {terbit:23} |")
-        print("="*61)
+        print("="*80)
+        print(f"{no:2} | {Judul:30} | {Pengarang:25} | {terbit:12} |")
+        print("="*80)
         
         for index,content in enumerate(isi):
             pecah = content.split(",")
             A = pecah[0]
             B = pecah[1]
             C = pecah[2].replace("\n","")
-            print(f"{index+1:2} | {A:10} | {B:15} | {C:20}\n", end="")  
+            print(f"{index+1:2} | {A:30} | {B:25} | {C:12} | \n", end="")  
             
-        print("="*61)
+        print("="*80)
     print("\nTekan [ENTER] untuk kembali ke menu.")
     bukadata.close()
     input()
