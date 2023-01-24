@@ -152,7 +152,7 @@ def ubahdata():
                 pecah[1] = penulisbr
                 pecah[2] = tahunbr+"\n"
                 xg = ",".join(pecah)
-                isi[1]=xg
+                isi[i]= xg
             i += 1
 
     bukadata = open("daftarbuku.txt","w")
